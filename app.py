@@ -16,7 +16,7 @@ if __name__=="__main__":
     app.run(debug=True)
 """
 app = Flask(__name__)
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def result_file():
     return render_template('index.html')
 
