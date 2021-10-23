@@ -1,6 +1,6 @@
 import matplotlib
 matplotlib.use('Agg')
-"""
+
 from matplotlib.pylab import *
 from skimage.feature import greycomatrix, greycoprops
 from sklearn.metrics.cluster import entropy
@@ -11,7 +11,6 @@ import math
 import scipy.spatial.distance as dist
 from PIL import Image
 import skimage.io
-
 
 root_path = '/static/content/'
 UPLOAD_FOLDER = '/static/uploads/'
@@ -305,4 +304,3 @@ def process_file(path):
         i += 1
         axis('off')
     return result
-"""
