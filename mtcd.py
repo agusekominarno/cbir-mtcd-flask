@@ -8,7 +8,6 @@ import cv2
 import csv
 import math
 import scipy.spatial.distance as dist
-# import the necessary packages
 from PIL import Image
 import skimage.io
 
