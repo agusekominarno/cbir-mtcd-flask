@@ -2,8 +2,28 @@ import os
 from flask import Flask, flash, request, redirect, url_for, send_from_directory, Request, render_template
 from werkzeug.utils import secure_filename
 import MTCD
-# from gevent.pywsgi import WSGIServe
 
+"""
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return render_template("index.html")
+
+if __name__=="__main__":
+    app.run(debug=True)
+"""
+
+@app.route('/', methods=['GET', 'POST'])
+def result_file():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+"""    
 UPLOAD_FOLDER = 'static/uploads/'
 RESULT_FOLDER = 'static/result'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -39,39 +59,15 @@ def upload_file():
             return redirect(url_for('result_file'))
     return render_template('index.html')
 
-@app.route('/', methods=['GET', 'POST'])
-def result_file():
-    return render_template('index.html')
-
 @app.after_request
 def add_header(r):
-    """
-    Add headers to both force latest IE rendering engine or Chrome Frame,
-    and also to cache the rendered page for 10 minutes.
-    """
+    
+    #Add headers to both force latest IE rendering engine or Chrome Frame,
+    #and also to cache the rendered page for 10 minutes.
+    
     r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     r.headers["Pragma"] = "no-cache"
     r.headers["Expires"] = "0"
     r.headers['Cache-Control'] = 'public, max-age=0'
     return r
-
-    
-if __name__ == '__main__':
-    # http_server = WSGIServer(('0.0.0.0', 5000), app)
-    # http_server.serve_forever()
-    app.run()
-
-    
-    
-"""
-from flask import Flask, render_template
-
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return render_template("index.html")
-
-if __name__=="__main__":
-    app.run(debug=True)
 """
