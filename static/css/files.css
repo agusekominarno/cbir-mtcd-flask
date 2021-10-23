@@ -1,0 +1,7 @@
+#image-preview {
+  /* background-image: url('../res/uploads/queryImg.jpg');
+  background-size: auto; */
+  display: none;
+  width: 100%;
+  height: 75%;
+}
