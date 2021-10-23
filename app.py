@@ -3,14 +3,6 @@ from flask import Flask, flash, request, redirect, url_for, send_from_directory,
 from werkzeug.utils import secure_filename
 import mtcd
 
-app = Flask(__name__)
-@app.route('/', methods=['GET', 'POST'])
-def result_file():
-    return render_template('index.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
-  
 UPLOAD_FOLDER = 'static/uploads/'
 RESULT_FOLDER = 'static/result/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -19,7 +11,6 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['RESULT_FOLDER'] = RESULT_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024
-
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -46,6 +37,10 @@ def upload_file():
             return redirect(url_for('result_file'))
     return render_template('index.html')
 
+@app.route('/', methods=['GET', 'POST'])
+def result_file():
+    return render_template('index.html')
+
 @app.after_request
 def add_header(r):
     
@@ -58,3 +53,5 @@ def add_header(r):
     r.headers['Cache-Control'] = 'public, max-age=0'
     return r
 
+if __name__ == '__main__':
+    app.run()
