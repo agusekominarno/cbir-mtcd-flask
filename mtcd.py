@@ -1,5 +1,5 @@
-import matplotlib
 """
+import matplotlib
 matplotlib.use('Agg')
 from matplotlib.pylab import *
 
