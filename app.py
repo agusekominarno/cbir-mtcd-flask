@@ -1,7 +1,7 @@
-#import os
+import os
 from flask import Flask, flash, request, redirect, url_for, send_from_directory, Request, render_template
-#from werkzeug.utils import secure_filename
-#import MTCD
+from werkzeug.utils import secure_filename
+import MTCD
 
 """
 from flask import Flask, render_template
