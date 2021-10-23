@@ -2,7 +2,6 @@
 import matplotlib
 matplotlib.use('Agg')
 from matplotlib.pylab import *
-
 from skimage.feature import greycomatrix, greycoprops
 from sklearn.metrics.cluster import entropy
 import numpy as np
