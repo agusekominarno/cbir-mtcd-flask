@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MTCD</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="static/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="static/css/util.css">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="static/css/files.css">
+    <style>
+        #ïmag {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            float: center;
+            width: 30%;
+        }
+
+        #input {
+            font-family: Poppins-Medium;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #666666;
+            visibility: visible;
+            display: block;
+            width: 100%;
+            background: #e6e6e6;
+            height: 50px;
+            border-radius: 25px;
+            padding: 0 30px 0 68px;
+        }
+    </style>
+    <!--===============================================================================================-->
+</head>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="wrap-title">
+                    <span class="login100-form-mytitle">
+                        MTCD for Image Retrieval
+                    </span>
+                </div>
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img id="image-preview" alt="image preview" />
+                </div>
+                <form class="login100-form validate-form" method=post enctype=multipart/form-data> <span
+                    class="login100-form-title">
+                    Select an Image File
+                    </span>
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-input100 validate-input" data-validate="Image file is required" id="input">
+                            <input class="input100" id="image-source" name="file" onchange="previewImage();" type="file"
+                                alt="Input Image" accept="image/jpeg,image/jpg,image/png">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-file" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" type="submit">
+                            Execute
+                        </button>
+                    </div>
+                    <div class="text-center p-t-136">
+                        <a href= "http://riset.informatika.umm.ac.id/" class="txt2"> back to home </a>
+                        <br>
+                        <a class="txt2">* Make sure that you have the correct image format. The allowed image format is
+                            .jpg .png .jpeg</a>
+                    </div>
+                </form>
+                <div class="wrap-title"><br><br><br><br>
+                    <span class="login100-form-mytitle">
+                        Retrieval Result
+                    </span>
+                    <h1 style="padding-left: 10px;">
+                        Last Query Image
+                    </h1>
+                </div>
+                <div>
+                    <img style="padding-left: 10px;padding-top: 10px;padding-bottom: 10px;width: 70%;"
+                        src="../static/uploads/queryImg.jpg" />
+                </div>
+                <div>
+                    <br>
+                    <h2 style="padding-left: 10px;">
+                        Last Retrieval Image Result
+                    </h2>
+                    <img id="ïmag" src="static/result/res1.jpg" alt="Result 1">
+                    <img id="ïmag" src="static/result/res2.jpg" alt="Result 2">
+                    <img id="ïmag" src="static/result/res3.jpg" alt="Result 3">
+                    <br> 
+                    <img id="ïmag" src="static/result/res4.jpg" alt="Result 4">
+                    <img id="ïmag" src="static/result/res5.jpg" alt="Result 5">
+                    <img id="ïmag" src="static/result/res6.jpg" alt="Result 6">
+                    <br> 
+                    <img id="ïmag" src="static/result/res7.jpg" alt="Result 7">
+                    <img id="ïmag" src="static/result/res8.jpg" alt="Result 8">
+                    <img id="ïmag" src="static/result/res9.jpg" alt="Result 9">
+                    <br> 
+                    <img id="ïmag" src="static/result/res10.jpg" alt="Result 10">
+                    <img id="ïmag" src="static/result/res11.jpg" alt="Result 11">
+                    <img id="ïmag" src="static/result/res12.jpg" alt="Result 12">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--===============================================================================================-->
+    <script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/vendor/bootstrap/js/popper.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/vendor/tilt/tilt.jquery.min.js"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <script src="static/js/files.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>
