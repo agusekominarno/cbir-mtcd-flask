@@ -6,7 +6,7 @@ import numpy as np
 #import cv2
 matplotlib.use('Agg')
 from matplotlib.pylab import *
-#import csv
-#import math
-#import scipy.spatial.distance as dist
-#from PIL import Image
+import csv
+import math
+import scipy.spatial.distance as dist
+from PIL import Image
