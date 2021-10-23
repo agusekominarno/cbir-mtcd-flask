@@ -3,7 +3,7 @@ from flask import Flask, flash, request, redirect, url_for, send_from_directory,
 from werkzeug.utils import secure_filename
 import mtcd
 
-app = Flask(__name__)
+#app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def result_file():
     return render_template('index.html')
