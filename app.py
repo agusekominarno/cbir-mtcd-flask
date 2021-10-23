@@ -1,13 +1,12 @@
-import os
+#import os
 from flask import Flask, flash, request, redirect, url_for, send_from_directory, Request, render_template
-from werkzeug.utils import secure_filename
+#from werkzeug.utils import secure_filename
 #import MTCD
 
 """
 from flask import Flask, render_template
 
 app = Flask(__name__)
-
 @app.route('/')
 def hello_world():
     return render_template("index.html")
@@ -15,7 +14,7 @@ def hello_world():
 if __name__=="__main__":
     app.run(debug=True)
 """
-
+app = Flask(__name__)
 @app.route('/')
 def result_file():
     return render_template('index.html')
