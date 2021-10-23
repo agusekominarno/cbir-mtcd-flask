@@ -11,6 +11,7 @@ import scipy.spatial.distance as dist
 from PIL import Image
 import skimage.io
 
+"""
 root_path = '/static/content/'
 UPLOAD_FOLDER = '/static/uploads/'
 
