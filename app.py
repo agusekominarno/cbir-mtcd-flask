@@ -12,7 +12,7 @@ if __name__ == '__main__':
     app.run(debug=True)
   
 UPLOAD_FOLDER = 'static/uploads/'
-RESULT_FOLDER = 'static/result'
+RESULT_FOLDER = 'static/result/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 app = Flask(__name__)
