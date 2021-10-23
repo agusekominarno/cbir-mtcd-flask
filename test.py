@@ -1,10 +1,11 @@
 import matplotlib
-import numpy as np
+import skimage.io
 from skimage.feature import greycomatrix, greycoprops
 from sklearn.metrics.cluster import entropy
-import skimage.io
+import numpy as np
 import cv2
-
+#matplotlib.use('Agg')
+#from matplotlib.pylab import *
 #import csv
 #import math
 #import scipy.spatial.distance as dist
