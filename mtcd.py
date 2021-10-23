@@ -1,6 +1,6 @@
-import matplotlib
 
 """
+import matplotlib
 matplotlib.use('Agg')
 from matplotlib.pylab import *
 from skimage.feature import greycomatrix, greycoprops
@@ -305,3 +305,4 @@ def process_file(path):
         i += 1
         axis('off')
     return result
+"""
