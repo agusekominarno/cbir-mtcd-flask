@@ -3,7 +3,7 @@ import skimage.io
 from skimage.feature import greycomatrix, greycoprops
 from sklearn.metrics.cluster import entropy
 import numpy as np
-import cv2
+#import cv2
 #matplotlib.use('Agg')
 #from matplotlib.pylab import *
 #import csv
