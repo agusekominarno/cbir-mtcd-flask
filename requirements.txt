@@ -12,7 +12,7 @@ MarkupSafe==2.0.1
 matplotlib==3.4.3
 networkx==2.6.3
 numpy==1.21.3
-opencv-python==4.5.4.58
+opencv-contrib-python-headless==4.5.4.58
 Pillow==8.4.0
 pyparsing==2.4.7
 python-dateutil==2.8.2
