@@ -21,8 +21,7 @@ def result_file():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-"""    
+  
 UPLOAD_FOLDER = 'static/uploads/'
 RESULT_FOLDER = 'static/result'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -69,4 +68,4 @@ def add_header(r):
     r.headers["Expires"] = "0"
     r.headers['Cache-Control'] = 'public, max-age=0'
     return r
-"""
+
