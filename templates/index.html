@@ -62,7 +62,7 @@
                 <!--query by upload -->
                 <form class="login100-form validate-form" method=post enctype=multipart/form-data> <span
                     class="login100-form-title">
-                    Select an Image File
+                    Upload an Image File
                     </span>
                     <div class="container-login100-form-btn">
                         <div class="wrap-input100 validate-input" data-validate="Image file is required" id="input">
@@ -83,24 +83,50 @@
                 <!--query by upload -->
                 
                 <!-- sample query -->
+                <br><br><br><br><br>
+                    <h2 style="padding-left: 10px;">
+                        Select Sample Query
+                    </h2>
+        
                 <section class="contact-section centred" style="padding-top:10px;" id="predict2">
                     <div class="container">
-                        <form action="/predict" method="POST">
-                            <div class="row" style="padding-bottom: 1%;">
-                                <div class="column">
-                                    <input type="hidden" name="input_image" id="count" value="static/mtcd/find1.jpg" />
-                                    <input type="image" name="submit" onclick="change('static/mtcd/find1.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='mtcd/find1.jpg')}}"/>
-                                </div>
-                                <div class="column">                            
-                                    <input type="image" name="submit" onclick="change('static/mtcd/find2.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='mtcd/find2.jpg')}}"/>
-                                </div>
-                                <div class="column">                            
-                                    <input type="image" name="submit" onclick="change('static/mtcd/find3.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='mtcd/find3.jpg')}}"/>
-                                </div>
-                            </div>
-                        </form>
+                        <table>
+                            <tr>
+                                <td>
+                                    <form action="/predict" method="post">
+                                        <div class="row" style="padding-bottom: 1%;">
+                                            <div class="column">
+                                                <input type="hidden" name="input_image" id="count" value="static/mtcd/find1.jpg" />
+                                                <input type="image" name="submit" onclick="change('static/mtcd/find1.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='mtcd/find1.jpg')}}"/>
+                                            </div>                                
+                                        </div>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="/predict" method="post">
+                                        <div class="row" style="padding-bottom: 1%;">
+                                            <div class="column">
+                                                <input type="hidden" name="input_image" id="count" value="static/mtcd/find2.jpg" />
+                                                <input type="image" name="submit" onclick="change('static/mtcd/find2.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='mtcd/find2.jpg')}}"/>
+                                            </div>                                
+                                        </div>
+                                    </form>
+                                </td>
+                                <td>    
+                                    <form action="/predict" method="post">
+                                        <div class="row" style="padding-bottom: 1%;">
+                                            <div class="column">
+                                                <input type="hidden" name="input_image" id="count" value="static/mtcd/find3.jpg" />
+                                                <input type="image" name="submit" onclick="change('static/mtcd/find3.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='mtcd/find3.jpg')}}"/>
+                                            </div>                                
+                                        </div>
+                                    </form>
+                                </td>                                
+                            </tr>
+                         </table>
                     </div>
                 </section>
+           
                 <!-- sample query end -->
 
                 <div class="wrap-title"><br><br><br><br>
@@ -139,7 +165,6 @@
             </div>
         </div>
     </div>
-
 
     <!--===============================================================================================-->
     <script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>

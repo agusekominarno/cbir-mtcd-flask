@@ -15,6 +15,18 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['RESULT_FOLDER'] = RESULT_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024
 
+@app.after_request
+def add_header(r):
+    
+    #Add headers to both force latest IE rendering engine or Chrome Frame,
+    #and also to cache the rendered page for 10 minutes.
+    
+    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    r.headers["Pragma"] = "no-cache"
+    r.headers["Expires"] = "0"
+    r.headers['Cache-Control'] = 'public, max-age=0'
+    return r
+
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -57,40 +69,5 @@ def mtcd_predict():
             return redirect('/')
     return render_template('/index.html', len = len(datahasil), datahasil = datahasil)
 
-@app.route('/test', methods=['GET', 'POST'])
-def mtcd_upload_file():
-    if request.method == 'POST':
-        # check if the post request has the file part
-        if 'file' not in request.files:
-            flash('No file part')
-            return redirect(request.url)
-        file = request.files['file']
-        # if user does not select file, browser also
-        # submit an empty part without filename
-        if file.filename == '':
-            flash('No selected file')
-            return redirect(request.url)
-        if file and allowed_file(file.filename):
-            filename = secure_filename("queryImg.jpg")
-            data = os.path.join('static/uploads/', filename)
-            file.save(data)
-            data = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            mtcd.process_file(data)
-            return redirect('/')
-    return render_template('/index.html', len = len(datahasil), datahasil = datahasil)
-
-@app.after_request
-def add_header(r):
-    
-    #Add headers to both force latest IE rendering engine or Chrome Frame,
-    #and also to cache the rendered page for 10 minutes.
-    
-    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    r.headers["Pragma"] = "no-cache"
-    r.headers["Expires"] = "0"
-    r.headers['Cache-Control'] = 'public, max-age=0'
-    return r
-
-#please place this code at bottom
 if __name__ == '__main__':
     app.run()

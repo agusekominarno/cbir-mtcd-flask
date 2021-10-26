@@ -2,7 +2,6 @@ click==8.0.3
 colorama==0.4.4
 cycler==0.10.0
 Flask==2.0.2
-gunicorn==20.1.0
 imageio==2.9.0
 itsdangerous==2.0.1
 Jinja2==3.0.2
@@ -12,13 +11,13 @@ MarkupSafe==2.0.1
 matplotlib==3.4.3
 networkx==2.6.3
 numpy==1.21.3
-opencv-contrib-python-headless==4.5.4.58
+opencv-python==4.5.4.58
 Pillow==8.4.0
-pyparsing==2.4.7
+pyparsing==3.0.1
 python-dateutil==2.8.2
 PyWavelets==1.1.1
 scikit-image==0.18.3
-scikit-learn==1.0
+scikit-learn==1.0.1
 scipy==1.7.1
 six==1.16.0
 sklearn==0.0
