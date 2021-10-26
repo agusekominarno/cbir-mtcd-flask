@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- page-title -->
+    <section class="page-title centred" style="background-image: url(../static/main/images/background/page-title.jpg);">
+        <div class="container">
+            <div class="content-box">
+                <div class="title">Research Product Details</div>
+                <ul class="bread-crumb">
+                    <li><a href="https://riset.informatika.umm.ac.id">Home</a></li>
+                    <li><a href="https://riset.informatika.umm.ac.id/area_of_interest/1">Data Science</a></li>
+                    <li><a href="https://riset.informatika.umm.ac.id/area_of_interest/topic/1">Research Topics</a></li>
+                    <li><a href="https://riset.informatika.umm.ac.id/area_of_interest/topic/1/5/all">Batik Images</a></li>
+                    <li>Product</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- page-title end -->
+
+
+    <!-- form-section -->
+    <section class="contact-section" style="padding-top:50px;" id="predict1">
+        <div class="container">
+            <div class="title-box centred" id="architechture">
+                <div class="sec-title"><a class="sec-title" href="#predict1">Upload an Image</a> / <a class="sec-title" href="#predict2">Select an Image</a><br> to Find Similar Images</div><br>
+            </div>
+            <img id="image-preview" alt="image preview" src="#" style="width: 25%;"/>
+            <form class="login100-form validate-form" action="/data_science_product/4/test" method=post enctype=multipart/form-data>
+                <div class="container-login100-form-btn">
+                    <div class="wrap-input100 validate-input" data-validate="Image file is required" id="input">
+                        <input class="input100" id="image-source" name="file" onchange="previewImage();" type="file"
+                            alt="Input Image" accept="image/jpeg,image/jpg,image/png">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-file" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" type="submit">
+                        Execute
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- form-section end -->
+
+        <!-- grid-section -->
+        <section class="contact-section centred" style="padding-top:10px;" id="predict2">
+            <div class="container">
+                <div class="title-box centred" id="architechture">
+                    <div class="sec-title"><a class="sec-title" href="#predict2">Select an Image</a> / <a class="sec-title" href="#predict1">Upload an Image</a><br> to Find Similar Images</div><br>
+                </div>
+                <form action="/data_science_product/4/predict" method="POST">
+                    <div class="row" style="padding-bottom: 1%;">
+                        <div class="column">
+                            <input type="hidden" name="input_image" id="count" value="static/main/images/predict/mtcd/find1.jpg" />
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find1.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find1.jpg')}}"/>
+                        </div>
+                        <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find2.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find2.jpg')}}"/>
+                        </div>
+                        <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find3.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find3.jpg')}}"/>
+                        </div>
+                          <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find4.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find4.jpg')}}"/>
+                        </div>
+                          <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find5.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find5.jpg')}}"/>
+                        </div>
+                      </div>                    
+                      <div class="row" style="padding-bottom: 1%;">
+                        <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find6.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find6.jpg')}}"/>
+                        </div>
+                        <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find7.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find7.jpg')}}"/>
+                        </div>
+                        <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find8.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find8.jpg')}}"/>
+                        </div>
+                          <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find9.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find9.jpg')}}"/>
+                        </div>
+                          <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find10.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find10.jpg')}}"/>
+                        </div>
+                      </div> 
+                      <div class="row">
+                        <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find11.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find11.jpg')}}"/>
+                        </div>
+                        <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find12.jpg')"  style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find12.jpg')}}"/>
+                        </div>
+                        <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find13.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find13.jpg')}}"/>
+                        </div>
+                          <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find14.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='main/images/predict/mtcd/find14.jpg')}}" />
+                        </div>
+                          <div class="column">
+                            <input type="image" name="submit" onclick="change('static/main/images/predict/mtcd/find15.jpg')" style="height: 150px;width: 235px;padding-left: 10%" src="{{ url_for('static', filename='main/images/predict/mtcd/find15.jpg')}}"/>
+                        </div>
+                      </div>
+                </form>
+            </div>
+        </section>
+        <!-- grid-section end -->
+
+    <!-- grid-section -->
+    <section class="contact-section centred" style="padding-top: 10px;" id="predict">
+        <div class="container">
+            <div class="divTable" >
+            <div class="divTableBody">
+            <div class="divTableRow">                
+                <div class="divTableCell"style="width: 3%;"></div>
+                <div class="divTableCell" style="width: 30%;">
+                    <div class="sec-title" style="font-size: 40px;">Last Query</div>
+                    <div>
+                        <img style="padding-top: 15%;padding-bottom: 15%;width: 100%;"
+                            src="{{ url_for('static', filename='uploads/queryImg.jpg') }}">
+                    </div>
+                </div>
+                <div class="divTableCell" style="margin: auto;" >
+                    <div class="sec-title" style="font-size: 40px;">Retrieval Result</div><br>           
+                        {%for i in range(0, 12)%} 
+                        <img id="imag" src="../static/result/{{datahasil[i]}}" alt="Result 1" style="width: 20%;">
+                        {%endfor%} 
+                </div>
+            </div>
+            </div>
+            </div>
+    </section>
+    <!-- grid-section end -->
+
+    {% endblock %}
