@@ -58,6 +58,8 @@
                 <div class="login100-pic js-tilt" data-tilt>
                     <img id="image-preview" alt="image preview" />
                 </div>
+
+                <!--query by upload -->
                 <form class="login100-form validate-form" method=post enctype=multipart/form-data> <span
                     class="login100-form-title">
                     Select an Image File
@@ -76,14 +78,31 @@
                         <button class="login100-form-btn" type="submit">
                             Execute
                         </button>
-                    </div>
-                    <div class="text-center p-t-136">
-                        <a href= "http://riset.informatika.umm.ac.id/" class="txt2"> back to home </a>
-                        <br>
-                        <a class="txt2">* Make sure that you have the correct image format. The allowed image format is
-                            .jpg .png .jpeg</a>
-                    </div>
+                    </div>                    
                 </form>
+                <!--query by upload -->
+                
+                <!-- sample query -->
+                <section class="contact-section centred" style="padding-top:10px;" id="predict2">
+                    <div class="container">
+                        <form action="/predict" method="POST">
+                            <div class="row" style="padding-bottom: 1%;">
+                                <div class="column">
+                                    <input type="hidden" name="input_image" id="count" value="static/mtcd/find1.jpg" />
+                                    <input type="image" name="submit" onclick="change('static/mtcd/find1.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='mtcd/find1.jpg')}}"/>
+                                </div>
+                                <div class="column">                            
+                                    <input type="image" name="submit" onclick="change('static/mtcd/find2.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='mtcd/find2.jpg')}}"/>
+                                </div>
+                                <div class="column">                            
+                                    <input type="image" name="submit" onclick="change('static/mtcd/find3.jpg')" style="height: 150px;width: 235px;padding-left: 10%;" src="{{ url_for('static', filename='mtcd/find3.jpg')}}"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <!-- sample query end -->
+
                 <div class="wrap-title"><br><br><br><br>
                     <span class="login100-form-mytitle">
                         Retrieval Result
@@ -120,6 +139,8 @@
             </div>
         </div>
     </div>
+
+
     <!--===============================================================================================-->
     <script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
